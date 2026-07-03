@@ -10,7 +10,7 @@ const formButton = document.querySelector('.formButton');
 const contactSuccess = document.querySelector('.contactSuccess');
 let successResetTimeoutId = null;
 let submitInProgress = false;
-const formSubmitEndpoint = 'https://formsubmit.co/ajax/info@lumipha.com';
+const formSubmitEndpoint = 'https://formsubmit.co/ajax/ddfb7716cd9a13010e7a4f9481f17f80';
 
 if (phoneInput) {
   phoneInput.setAttribute('inputmode', 'numeric');
