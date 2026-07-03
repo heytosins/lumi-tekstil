@@ -1,0 +1,688 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: 'Epilogue', sans-serif !important;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.greetingsContainer{
+    width: 100%;
+    height: 634px;
+    padding-top: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: #ffffff;
+    box-shadow: inset 0 -8px 32px 0 rgba(0, 0, 0, 0.10);
+    position: relative;
+}
+
+.headerTitles{
+    display: flex;
+    gap: 16px;
+}
+
+.headerLink{
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    line-height: 0.7;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.headerLink::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #e24a3b;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.headerLink:hover,
+.headerLink:focus{
+    color: #e24a3b;
+}
+
+.headerLink:hover::after,
+.headerLink:focus::after{
+    transform: scaleX(1);
+}
+
+.mainTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+    padding: 0 32px;
+}
+
+.mainTitle{
+    font-size: 32px;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    line-height: 0.7;
+    font-weight: 600;
+    text-align: center;
+}
+
+.mainDescription{
+    font-size: 24px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.64;
+    text-align: center;
+}
+
+.greetingsImage{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.greetingsImage img{
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+}
+
+.featurePart{
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 62px;
+}
+
+.featureMainTitle{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin: 0;
+    align-self: center;
+}
+
+.featureContainers{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 32px;
+}
+
+.featureContainer{
+    width: 100%;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid #e2e2e2;
+}
+
+.featureContainer img{
+    transition: opacity 0.35s ease;
+}
+
+.featureContainer:hover img{
+    transform: none;
+}
+
+.featureTitle{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.featureDescription{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.64;
+    margin: 0;
+    text-align: center;
+}
+
+.productSection{
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 96px;
+}
+
+.productMainTitle{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin: 0;
+    align-self: center;
+}
+
+.productContainers{
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.productContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.productContainer img{
+    width: 100%;
+    height: clamp(180px, 28vw, 309px);
+    object-fit: contain;
+}
+
+.productTitle{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 24px 24px 12px 24px;
+}
+
+.productDescription{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.64;
+    margin: 0px 24px 24px 24px;
+}
+
+.aboutSection{
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 96px;
+}
+
+.aboutMainTitle{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin: 0;
+    align-self: center;
+}
+
+.aboutContainers{
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.aboutContainer{
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.aboutTitle{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin: 0 0 16px;
+}
+
+.aboutDescription{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.64;
+    margin: 0;
+}
+
+.contactSection{
+    padding: 0 32px;
+    margin-top: 96px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactContent{
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.contactInfo{
+    flex: 1 1 1;
+    min-width: 232px;
+    max-width: 56%;
+}
+
+.contactInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.contactFormWrapper{
+    flex: 0 0 420px;
+    max-width: 420px;
+    position: relative;
+}
+
+.contactForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.formInput{
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-color: #f8f8f8;
+    font-family: inherit;
+    font-size: 14px;
+    color: #000000;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    min-height: 54px;
+}
+
+.formInput::placeholder{
+    opacity: 0.64;
+    color: #000000;
+    font-weight: 500;
+}
+
+.formInput:focus,
+.formInput.focused{
+    outline: none;
+    background-color: #f8f8f8;
+    border-color: #000000;
+}
+
+.formInput.invalid{
+    border-color: #e24a3b;
+    box-shadow: 0 0 0 2px rgba(226, 74, 59, 0.14);
+}
+
+textarea.formInput{
+    min-height: 140px;
+    resize: none;
+}
+
+.checkboxLabel{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-radius: 12px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.checkboxLabel:hover{
+    border-color: #d3d3d3;
+}
+
+.checkboxLabel.invalid{
+    box-shadow: none;
+}
+
+.checkboxLabel.invalid .checkboxCustom{
+    border-color: #e24a3b;
+    box-shadow: 0 0 0 2px rgba(226, 74, 59, 0.14);
+}
+
+.formCheckbox{
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.checkboxCustom{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    border: 1px solid #d3d3d3;
+    background-color: #ffffff;
+    position: relative;
+    margin-top: 2px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.formlink{
+    color: #e24a3b;
+    font-weight: 400;
+}
+
+.formCheckbox:checked + .checkboxCustom{
+    border-color: #e24a3b;
+    background-color: #e24a3b;
+}
+
+.formCheckbox:checked + .checkboxCustom::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+
+.formButton{
+    width: 100%;
+    min-height: 56px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: none;
+    background-color: #e24a3b;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formButton:hover{
+    background-color: #cc4135;
+    box-shadow: 0 12px 24px rgba(226, 74, 59, 0.18);
+}
+
+.formButton:active{
+    transform: translateY(1px);
+}
+
+.formButton.pressed{
+    transform: scale(0.99);
+}
+
+.contactSuccess{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.contactSuccess.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    height: 101%;
+}
+
+.successIcon{
+    width: 72px;
+    height: 72px;
+}
+
+.successTitle{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 930px) {
+    .featureContainers,
+    .productContainers{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .aboutContainers{
+        flex-direction: column;
+    }
+
+    .contactContent{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contactInfo,
+    .contactFormWrapper{
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footerDate{
+        display: none;
+    }
+}
+
+@media (max-width: 784px) {
+    .greetingsImage img{
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerTitles{
+        display: none;
+    }
+    .mainTitle{
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .mainDescription{
+        font-size: 16px;
+    }
+    .header{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 484px) {
+    .featureContainers,
+    .productContainers{
+        grid-template-columns: 1fr;
+    }
+
+    .featureMainTitle{
+        line-height: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .contactContent{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contactFormWrapper,
+    .contactInfo{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contactFormWrapper{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 584px) {
+    .greetingsImage img:first-child,
+    .greetingsImageTablet{
+        display: none;
+    }
+}
+
+.contactMainTitle{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.7;
+    margin: 0;
+    align-self: center;
+    margin-bottom: 40px !important;
+}
+
+.contactInfoItem{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contactInfoText{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0.7;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer{
+    width: 100%;
+    background-color: #e24a3b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px;
+    margin-top: 96px;
+}
+
+.footerDate{
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 16px !important;
+}
+
+.footerFollowLink{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 16px;
+    background-color: #ffffff0c;
+    border-radius: 100px;
+    border: 2px solid #ffffff3d;
+}
+
+.opacityText{
+    opacity: 0.67;
+    color: #ffffff9a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.followLinkText{
+    margin: 0;
+}
+
+.footerLinks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footerLink{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footerLink:nth-child(1){
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.footerLink:nth-child(2){
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.footerLink:nth-child(3){
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.footerLink:nth-child(4){
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.footerLink:nth-child(5){
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.colorizedtext{
+    color: #e24a3b;
+}
