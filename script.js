@@ -158,7 +158,7 @@ contactForm.addEventListener('submit', async (event) => {
   setSubmitState(true);
 
   try {
-    const response = await fetch('https://project-lumipha.onrender.com/', {
+    const response = await fetch('https://project-lumipha.onrender.com/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
