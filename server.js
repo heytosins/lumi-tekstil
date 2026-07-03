@@ -15,22 +15,29 @@ if (missingKeys.length > 0) {
   console.warn(`Eksik .env değişkenleri: ${missingKeys.join(', ')}`);
 }
 
-const smtpPort = Number(process.env.SMTP_PORT || 587);
+const smtpPort = Number(process.env.SMTP_PORT || 465);
 const mailRecipient = process.env.RECIPIENT_EMAIL || process.env.MAIL_TO || process.env.SMTP_USER;
 const mailFrom = process.env.MAIL_FROM || process.env.SMTP_USER;
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: smtpPort,
-  secure: false,
-  requireTLS: true,
+  secure: true,
+  tls: {
+    rejectUnauthorized: false,
+  },
+  connectionTimeout: 10000,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
 });
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname)));
