@@ -158,8 +158,7 @@ contactForm.addEventListener('submit', async (event) => {
   setSubmitState(true);
 
   try {
-    // BURAYI GÜNCELLEDİM DAYÇO
-    const response = await fetch('https://lumipha-api.onrender.com/send-email', {
+    const response = await fetch('https://project-lumipha.onrender.com/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
